@@ -1,0 +1,98 @@
+net sserial-reset => axisui.notifications-clear # Special sequence for reset signal!
+sets sserial-reset 1 # Special sequence for reset signal!
+
+###############################################################################
+#Python Virtual Control Panels (pyVCP) links to Joint-position signal
+#Meters
+###############################################################################
+net j0fb joint.0.pos-fb pyvcp.joint0
+net j1fb joint.1.pos-fb pyvcp.joint1
+net j2fb joint.2.pos-fb pyvcp.joint2
+net j3fb joint.3.pos-fb pyvcp.joint3
+net j4fb joint.4.pos-fb pyvcp.joint4
+net j5fb joint.5.pos-fb pyvcp.joint5
+
+###############################################################################
+# Brake release buttons
+###############################################################################
+net j0.brake-release pyvcp.j0-brake-rel [HM2](STMBL)0.output_pins-00
+net j1.brake-release pyvcp.j1-brake-rel [HM2](STMBL)1.output_pins-00
+net j2.brake-release pyvcp.j2-brake-rel [HM2](STMBL)2.output_pins-00
+net j3.brake-release pyvcp.j3-brake-rel [HM2](STMBL)3.output_pins-00
+net j4.brake-release pyvcp.j4-brake-rel [HM2](STMBL)4.output_pins-00
+net j5.brake-release pyvcp.j5-brake-rel [HM2](STMBL)5.output_pins-00
+# net j0.brake-release pyvcp.j0-brake-rel [HM2](STMBL)0.output_pins-00
+
+#net drives-reset => [HM2](STMBL)0.output_pins-01
+#net drives-reset => [HM2](STMBL)1.output_pins-01
+#net drives-reset => [HM2](STMBL)2.output_pins-01
+#net drives-reset => [HM2](STMBL)3.output_pins-01
+#net drives-reset => [HM2](STMBL)4.output_pins-01
+#net drives-reset => [HM2](STMBL)5.output_pins-01
+# net j0.brake-release pyvcp.j0-brake-rel [HM2](STMBL)0.output_pins-00
+
+# --- Home, Limit switches ---# net	 clear-J0 <= pyvcp.clear-J0
+net j0.home => pyvcp.led0
+net j1.home => pyvcp.led1
+net j2.home => pyvcp.led2
+net j3.home => pyvcp.led3
+net j4.home => pyvcp.led4
+net j5.home => pyvcp.led5
+# net j0.home => pyvcp.led0
+
+# net	 clear-J1 <= pyvcp.clear-J1
+# net	 clear-J2 <= pyvcp.clear-J2
+# net	 clear-J3 <= pyvcp.clear-J3
+# net	 clear-J4 <= pyvcp.clear-J4
+# net	 clear-J5 <= pyvcp.clear-J5
+
+###############################################################################
+# Startup toggles
+###############################################################################
+#fixme ... break serial connection (GDTool when LinuxCNC is running)
+#net	 enable-J0 <= pyvcp.enable-J0
+#net	 enable-J1 <= pyvcp.enable-J1
+#net	 enable-J2 <= pyvcp.enable-J2
+#net	 enable-J3 <= pyvcp.enable-J3
+#net	 enable-J4 <= pyvcp.enable-J4
+#net	 enable-J5 <= pyvcp.enable-J5
+
+# ###############################################################################
+# # ShuttleXpress joypad setup
+# ###############################################################################
+# # joypad speed config
+# setp halui.axis.jog-speed 1500
+# 
+# #net x.jog mux2.0.out halui.axis.x.analog
+# #net z.jog mux2.1.out halui.axis.z.analog
+# 
+# net j0.jog-enable shuttlexpress.0.button-0 mux2.0.sel
+# net j1.jog-enable shuttlexpress.0.button-1 mux2.1.sel
+# net j2.jog-enable shuttlexpress.0.button-2 mux2.2.sel
+# net j3.jog-enable shuttlexpress.0.button-3 mux2.3.sel
+# net j4.jog-enable shuttlexpress.0.button-4 mux2.4.sel
+# 
+# net jog-speed shuttlexpress.0.spring-wheel-f mux2.0.in1 mux2.1.in1 mux2.2.in1 mux2.3.in1 mux2.4.in1
+# 
+# net j0.jog mux2.0.out halui.axis.x.analog
+# net j1.jog mux2.1.out halui.axis.y.analog
+# net j2.jog mux2.2.out halui.axis.z.analog
+# net j3.jog mux2.3.out halui.axis.a.analog
+# net j4.jog mux2.4.out halui.axis.b.analog
+# 
+# 
+# #net j0.jog-enable joint.0.jog-enable <= shuttlexpress.0.button-0
+# #net j1.jog-enable joint.1.jog-enable <= shuttlexpress.0.button-1
+# #net j2.jog-enable joint.2.jog-enable <= shuttlexpress.0.button-2
+# #net j3.jog-enable joint.3.jog-enable <= shuttlexpress.0.button-3
+# #net j4.jog-enable joint.4.jog-enable <= shuttlexpress.0.button-4
+
+
+#reverse joypad y and z axis
+#setp input.0.abs-y-scale -127.5
+#setp input.0.abs-rz-scale -127.5
+
+###############################################################################
+
+net sserial-reset <= pyvcp.reset-sserial
+#net drives-reset <= pyvcp.reset-drives

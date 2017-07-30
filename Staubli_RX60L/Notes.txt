@@ -1,0 +1,13 @@
+ThermoF3
+
+Manutec_R15
+
+
+1) Copy of Manutec_R15 with Manutec_R15 replaced by Staubli_RX60L [done}
+
+2) Dimensions for arm to be inputed
+
+3) setting for mesa etc to be loaded 
+
+
+

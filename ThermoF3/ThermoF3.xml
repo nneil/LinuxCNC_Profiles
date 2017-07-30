@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pyvcp>
+<vbox>
+<button>
+  <halpin>"reset-sserial"</halpin>
+  <text>"Reset Smartserial"</text>
+</button>
+</vbox>
+<hbox>
+<vbox>
+<!-- fixme: get min/max from ini -->
+<!--fixme: get offset from ini -->
+ <labelframe text="Axis 1 - J0">
+  
+	<vbox>
+		<meter><size>120</size><halpin>"joint0"</halpin>
+			<max_>165</max_>
+			<min_>-165</min_>
+			<region1>(-162,-155,"yellow")</region1>
+			<region2>(-155,155,"green")</region2>
+			<region3>(155,162,"yellow")</region3>
+			</meter>
+		<hbox>
+			<checkbutton>
+				<halpin>"j0-brake-rel"</halpin>
+				<text>"release brakes"</text>
+			</checkbutton>
+			<led>			
+				<width>4</width>
+				<halpin>"led0"</halpin>				
+			</led>
+		</hbox>
+	</vbox>
+ </labelframe>
+
+ <labelframe text="Axis 3 - J2">
+ 
+  <vbox>
+    <meter><size>120</size><halpin>"joint2"</halpin>
+			<max_>220</max_><min_>-40</min_>
+			<region1>(-40,-35,"yellow")</region1>
+			<region2>(-35,215,"green")</region2>
+			<region3>(215,220,"yellow")</region3>
+	</meter>
+	<hbox>
+		<checkbutton>
+			<halpin>"j2-brake-rel"</halpin>
+			<text>"release brakes"</text>
+		</checkbutton>
+		<led>			
+			<width>4</width>
+			<halpin>"led2"</halpin>
+			
+		</led>
+	</hbox>
+  </vbox>
+ </labelframe>
+
+ <labelframe text="Axis 5 - J4">
+ 
+  <vbox>
+    <meter><size>120</size><halpin>"joint4"</halpin>
+		<max_>120</max_><min_>-120</min_>
+			<region1>(-120,-110,"yellow")</region1>
+			<region2>(-110,110,"green")</region2>
+			<region3>(110,120,"yellow")</region3>
+	</meter>
+	<hbox>
+		<checkbutton>
+			<halpin>"j4-brake-rel"</halpin>
+				<text>"release brakes"</text>
+		</checkbutton>
+		<led>
+			<width>4</width>
+			<halpin>"led4"</halpin>
+		</led>
+	</hbox>
+  </vbox>
+ </labelframe>
+
+</vbox>
+<vbox>
+
+ <labelframe text="Axis 2 - J1">
+ 
+  <vbox>
+    <meter><size>120</size><halpin>"joint1"</halpin>
+	<max_>200</max_><min_>-20</min_>
+		<region1>(200,195,"yellow")</region1>
+		<region2>(195,15,"green")</region2>
+		<region3>(15,20,"yellow")</region3>
+	</meter>
+	<hbox>
+		<checkbutton>
+			<halpin>"j1-brake-rel"</halpin>
+			<text>"release brakes"</text>
+		</checkbutton>
+		<led>			
+			<width>4</width>
+			<halpin>"led1"</halpin>			
+		</led>
+	</hbox>
+  </vbox>
+ </labelframe>
+
+ <labelframe text="Axis 4 - J3">
+  
+	<vbox>
+    <meter><size>120</size><halpin>"joint3"</halpin>
+	<max_>180</max_><min_>-180</min_>
+		<region1>(-180,-175,"yellow")</region1>
+		<region2>(-175,175,"green")</region2>
+		<region3>(175,180,"yellow")</region3>	
+	</meter>
+		<hbox>
+			<checkbutton>
+				<halpin>"j3-brake-rel"</halpin>
+				<text>"release brakes"</text>
+			</checkbutton>
+			<led>				
+				<width>4</width>
+				<halpin>"led3"</halpin>				
+			</led>
+		</hbox>
+	</vbox>
+ </labelframe>
+
+ <labelframe text="Axis 6 - J5">
+ 
+  <vbox>
+    <meter><size>120</size><halpin>"joint5"</halpin>
+	<max_>180</max_><min_>-180</min_>
+		<region2>(-180,180,"green")</region2>
+	</meter>
+	<hbox>
+		<checkbutton>
+			<halpin>"j5-brake-rel"</halpin>
+			<text>"release brakes"</text>
+		</checkbutton>
+		<led>			
+			<width>4</width>
+			<halpin>"led5"</halpin>			
+		</led>
+	</hbox>
+  </vbox>
+ </labelframe>
+
+</vbox>
+</hbox>
+</pyvcp>

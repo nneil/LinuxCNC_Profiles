@@ -1,6 +1,7 @@
-This is the config for a Manutec R15 with stmbl drivers using genserkins and vismach
-2017-07-23
+I have cloned this from a  Manutec R15 arm done by 
+
 Christian Stöveken
 Rene Hopf
 Marius Alksnys
 
+In the hope that I can get it to workk with a ThermoF3

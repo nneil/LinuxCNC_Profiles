@@ -43,7 +43,7 @@ configpath = './obj/'
 from vismach import *
 import hal
 
-c = hal.component("ThermoF3_gui")
+c = hal.component("Staubli_RX60L_gui")
 c.newpin("joint1", hal.HAL_FLOAT, hal.HAL_IN)
 c.newpin("joint2", hal.HAL_FLOAT, hal.HAL_IN)
 c.newpin("joint3", hal.HAL_FLOAT, hal.HAL_IN)
@@ -88,7 +88,7 @@ tool = Translate([tool], 0, 0, -249.5)# #offset of axis 5 (99,5) + tool length (
 
 # link 7
 link7 = AsciiOBJ(filename=configpath+"tool.obj");
-#link7 = AsciiSTL(filename=configpath+"stl/ThermoF3_tool.stl")
+#link7 = AsciiSTL(filename=configpath+"stl/Staubli_RX60L_tool.stl")
 #link7 = Color([0,0,1,1],[link7])
 link7 = Color([0.5,0.5,0.5,1],[link7])
 ##move link7 to 0 pos. so, that tooltip matches
@@ -103,7 +103,7 @@ link7 = HalRotate([link7],c,"joint6",1,0,0,1)
 
 # link 6
 link6 = AsciiOBJ(filename=configpath+"joint6.obj");
-#link6 = AsciiSTL(filename=configpath+"stl/ThermoF3_joint6.stl")
+#link6 = AsciiSTL(filename=configpath+"stl/Staubli_RX60L_joint6.stl")
 ## rotate and translate it so that the joint 6 is in origin
 #link6 = Rotate([link6],-90,0,1,0)
 #link6 = Translate([link6],0,0,-1.8) #note: 1.8 + 0.4 = 2.2 - in the drawing distance from join5 to end effector
@@ -123,7 +123,7 @@ link6 = HalRotate([link6],c,"joint5",1,0,1,0)
 
 # link 5, wrist
 link5 = AsciiOBJ(filename=configpath+"joint5.obj");
-#link5 = AsciiSTL(filename=configpath+"stl/ThermoF3_joint5.stl")
+#link5 = AsciiSTL(filename=configpath+"stl/Staubli_RX60L_joint5.stl")
 link5 = Color([0.5,0.5,0.5,1],[link5])
 link5 = Translate([link5],-730,-12,-1165)
 link5 = Collection([link6, link5])
@@ -133,7 +133,7 @@ link5 = HalRotate([link5],c,"joint4",1,1,0,0)
 
 # link4, arm, origin is in the joint3 location
 link4 = AsciiOBJ(filename=configpath+"joint4.obj")
-#link4 = AsciiSTL(filename=configpath+"stl/ThermoF3_joint4.stl")
+#link4 = AsciiSTL(filename=configpath+"stl/Staubli_RX60L_joint4.stl")
 ## need to rotate it, and translate it so that joint 4 is in origin
 link4 = Translate([link4],0,-12,-1165)
 link4 = Collection([link5, link4])
@@ -144,13 +144,13 @@ link4 = HalRotate([link4],c,"joint3",1,0,1,0)
 
 #--------- link 3 / joint 3
 link3 = AsciiOBJ(filename=configpath+"joint3.obj")
-#link3 = AsciiSTL(filename=configpath+"stl/ThermoF3_joint3.stl")
+#link3 = AsciiSTL(filename=configpath+"stl/Staubli_RX60L_joint3.stl")
 link3 = Color([0.5,0.5,0.5,1],[link3])
-    #ThermoF3_text = AsciiOBJ(filename=configpath+"ThermoF3_text.obj")
-    #ThermoF3_text = Rotate([ThermoF3_text],180,0,0,1)
-    #ThermoF3_text = Translate([ThermoF3_text],9,1,4)
-    #ThermoF3_text = Color([0,0,1,1],[ThermoF3_text])
-#link3 = Collection([link3, ThermoF3_text])
+    #Staubli_RX60L_text = AsciiOBJ(filename=configpath+"Staubli_RX60L_text.obj")
+    #Staubli_RX60L_text = Rotate([Staubli_RX60L_text],180,0,0,1)
+    #Staubli_RX60L_text = Translate([Staubli_RX60L_text],9,1,4)
+    #Staubli_RX60L_text = Color([0,0,1,1],[Staubli_RX60L_text])
+#link3 = Collection([link3, Staubli_RX60L_text])
 link3 = Translate([link3],0,0,-1165)
 link3 = Collection([link4, link3])
 link3 = Translate([link3],500,0,0)
@@ -160,7 +160,7 @@ link3 = HalRotate([link3],c,"joint2",1,0,1,0)
 
 #--------- link 2 / joint 2
 link2 = AsciiOBJ(filename=configpath+"joint2.obj")
-#link2 = AsciiSTL(filename=configpath+"stl/ThermoF3_joint2.stl")
+#link2 = AsciiSTL(filename=configpath+"stl/Staubli_RX60L_joint2.stl")
 
 
 #compensate for the origin of link2 not being in the rotation center
@@ -174,7 +174,7 @@ link2 = HalRotate([link2],c,"joint1",1,0,0,1)
 
 #--------- link 1 / base / (stationary) joint1
 # stationary base
-#link1 = AsciiSTL(filename=configpath+"3dstostlonline/ThermoF3_joint1.stl")
+#link1 = AsciiSTL(filename=configpath+"3dstostlonline/Staubli_RX60L_joint1.stl")
 link1 = AsciiOBJ(filename=configpath+"joint1.obj")
 link1 = Color([0.5,0.5,0.5,1],[link1])
 #Dark grey [0.18,0.19,0.2,1]
@@ -182,11 +182,11 @@ link1 = Rotate([link1],180,0,0,1)
 
 
 #to start just inserting the first (base) piece:
-#ThermoF3 = Collection([link1])
-ThermoF3 = Collection([link2, link1])
+#Staubli_RX60L = Collection([link1])
+Staubli_RX60L = Collection([link2, link1])
 
 #assemble everything in the final Collection
-model = Collection([tooltip, ThermoF3, floor, work])
+model = Collection([tooltip, Staubli_RX60L, floor, work])
 
 
 #main(model, tooltip, work,50)

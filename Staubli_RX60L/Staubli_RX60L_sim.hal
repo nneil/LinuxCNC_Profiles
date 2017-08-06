@@ -156,19 +156,19 @@ setp genserkins.D-5 99.5
 # --- Simulator ---
 
 #vismach simulator
-loadusr -W ./ThermoF3_gui
+loadusr -W ./Staubli_RX60L_gui
 
-net j0.poscmd ThermoF3_gui.joint1
-net j1.poscmd ThermoF3_gui.joint2
-net j2.poscmd ThermoF3_gui.joint3
-net j3.poscmd ThermoF3_gui.joint4
-net j4.poscmd ThermoF3_gui.joint5
-net j5.poscmd ThermoF3_gui.joint6
+net j0.poscmd Staubli_RX60L_gui.joint1
+net j1.poscmd Staubli_RX60L_gui.joint2
+net j2.poscmd Staubli_RX60L_gui.joint3
+net j3.poscmd Staubli_RX60L_gui.joint4
+net j4.poscmd Staubli_RX60L_gui.joint5
+net j5.poscmd Staubli_RX60L_gui.joint6
 
 # No success:
-# net j0.poscmd ThermoF3_gui.joint0
-# net j1.poscmd ThermoF3_gui.joint1
-# net j2.poscmd ThermoF3_gui.joint2
-# net j3.poscmd ThermoF3_gui.joint3
-# net j4.poscmd ThermoF3_gui.joint4
-# net j5.poscmd ThermoF3_gui.joint5
+# net j0.poscmd Staubli_RX60L_gui.joint0
+# net j1.poscmd Staubli_RX60L_gui.joint1
+# net j2.poscmd Staubli_RX60L_gui.joint2
+# net j3.poscmd Staubli_RX60L_gui.joint3
+# net j4.poscmd Staubli_RX60L_gui.joint4
+# net j5.poscmd Staubli_RX60L_gui.joint5

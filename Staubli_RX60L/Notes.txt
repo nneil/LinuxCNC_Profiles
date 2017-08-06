@@ -1,4 +1,4 @@
-ThermoF3
+Staubli_RX60L
 
 Manutec_R15
 

@@ -7,7 +7,7 @@ loadrt pwmgen output_type=0 # This creates a 1Hz signal
 loadrt encoder num_chan=1 # This will count the 1Hz signals
 loadrt edge count=1 # and this looks for a change in program.is-running to reset the timer
 
-loadusr -W timelogger
+#loadusr -W timelogger
 
 addf pwmgen.make-pulses  servo-thread
 addf encoder.update-counters  servo-thread # If you don't have a base-thread then put it in the servo-thread
@@ -24,7 +24,7 @@ setp edge.0.in-edge false
 
 net run-timer halui.program.is-running => pwmgen.0.enable edge.0.in
 net OneHzPulse pwmgen.0.pwm => encoder.0.phase-A
-#net timer-reset edge.0.out => encoder.0.reset
+# net timer-reset edge.0.out => encoder.0.reset
 
-net timer-display encoder.0.position => pyvcp.timer
-net timer-display encoder.0.position => timelogger.timeinput
+# net timer-display encoder.0.position => pyvcp.timer
+# net timer-display encoder.0.position => timelogger.timeinput

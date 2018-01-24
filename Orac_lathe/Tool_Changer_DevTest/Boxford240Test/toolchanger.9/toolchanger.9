@@ -1,0 +1,64 @@
+.TH TOOLCHANGER "9" "2011-05-10" "EMC Documentation" "HAL Component"
+.de TQ
+.br
+.ns
+.TP \\$1
+..
+
+.SH NAME
+
+toolchanger \- This component controls the Boxford 240 Lathe Auto Tool Changer. M6 calls this
+.SH SYNOPSIS
+.HP
+.B loadrt toolchanger
+.SH FUNCTIONS
+.TP
+\fBtoolchanger\fR (uses floating-point)
+
+.SH PINS
+.TP
+.B toolchanger.toolchange\fR bit in \fR
+Receives signal from M6 that tool change required
+.TP
+.B toolchanger.toolnumber\fR s32 in \fR
+Receives Tx data from M6 (tool number requested) Only allows 1-8
+.TP
+.B toolchanger.currenttoolnumber\fR s32 in \fR
+Receives old tool number
+.TP
+.B toolchanger.position-cmd\fR float out \fR
+Sends location required
+.TP
+.B toolchanger.toolchanged\fR bit out \fR(default: \fIfalse\fR)
+Sends signal when tool change finished
+.TP
+.B toolchanger.ishomed\fR bit in \fR(default: \fIfalse\fR)
+Status of A axis homing
+.TP
+.B toolchanger.jog-forward\fR bit in \fR(default: \fIfalse\fR)
+Facilitate jogging of stepgen via component
+.TP
+.B toolchanger.jog-back\fR bit in \fR(default: \fIfalse\fR)
+Facilitate jogging of stepgen via component
+.TP
+.B toolchanger.jog-move\fR float in \fR(default: \fI0\fR)
+distance to jog
+.SH PARAMETERS
+.TP
+.B toolchanger.odd-move\fR float rw \fR(default: \fI22.2\fR)
+distance from odd tool station to even one
+.TP
+.B toolchanger.even-move\fR float rw \fR(default: \fI24\fR)
+distance from even tool station to odd one
+.TP
+.B toolchanger.divisor\fR float rw \fR(default: \fI2\fR)
+used in calculating reverse move to lock
+.TP
+.B toolchanger.fudge-factor\fR float rw \fR(default: \fI1\fR)
+additional move to ensure locking
+.SH AUTHOR
+
+ArcEye schooner30@tiscali.co.uk
+.SH LICENSE
+
+GPL
